@@ -1,0 +1,20 @@
+server:
+  port: 8130 # 服务端口
+
+spring:
+  profiles:
+    active: dev # 环境设置
+  application:
+    name: service-oss # 服务名
+  #spring:
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848 # nacos服务地址
+
+aliyun:
+  oss:
+    endpoint: oss-cn-nanjing.aliyuncs.com
+    keyId: LTAI5tR9TMV6z68azwfaN8iw
+    keySecret: 0FzR9JxVf9ZKPfk8nbW9mg2AoXZhxI
+    bucketName: curiophil-srb-file
