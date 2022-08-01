@@ -24,13 +24,13 @@ public class OssTest {
 // 填写Bucket名称，例如examplebucket。
         String bucketName = "****";
 // 填写文件名。文件名包含路径，不包含Bucket名称。例如exampledir/exampleobject.txt。
-        String objectName = "摘录.md";
+        String objectName = "***";
 
 // 创建OSSClient实例。
         OSS ossClient = new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
 
         byte[] bytes = IOUtils.readStreamAsByteArray(
-                new FileInputStream("D:\\workBench\\装b文案.md"));
+                new FileInputStream("***"));
         String content = "Hello OSS";
         ossClient.putObject(bucketName, objectName, new ByteArrayInputStream(bytes));
 
