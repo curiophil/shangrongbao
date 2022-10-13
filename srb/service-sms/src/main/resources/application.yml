@@ -9,7 +9,7 @@ spring:
 
   #spring:
   redis:
-    host: hadoop105
+    host: 120.48.78.208
     port: 6379
     database: 0
     timeout: 3000ms #最大等待时间，超时则抛出异常，否则请求一直等待
@@ -19,6 +19,7 @@ spring:
         max-wait: -1    #最大阻塞等待时间，负值表示没限制，默认-1
         max-idle: 8     #最大空闲连接，默认8
         min-idle: 0     #最小空闲连接，默认0
+    password: 123456
   #spring:
   cloud:
     nacos:
