@@ -8,11 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.math.BigDecimal;
@@ -40,6 +36,13 @@ public class LendController {
     @GetMapping("/list")
     public R list() {
         List<Lend> lendList = lendService.selectList();
+        return R.ok().data("lendList", lendList);
+    }
+
+    @ApiOperation("获取用户的借款记录")
+    @GetMapping("/list/{user_id}")
+    public R listByUserId(@PathVariable(value = "user_id") Long userId) {
+        List<Lend> lendList = lendService.selectListByUserId(userId);
         return R.ok().data("lendList", lendList);
     }
 

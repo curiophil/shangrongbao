@@ -261,6 +261,14 @@ public class LendServiceImpl extends ServiceImpl<LendMapper, Lend> implements Le
         this.repaymentPlan(lend);
     }
 
+    @Override
+    public List<Lend> selectListByUserId(Long userId) {
+        QueryWrapper<Lend> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("user_id", userId);
+        List<Lend> lends = baseMapper.selectList(queryWrapper);
+        return lends;
+    }
+
     /**
      * 还款计划
      *

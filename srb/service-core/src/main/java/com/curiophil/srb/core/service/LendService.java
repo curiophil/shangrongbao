@@ -29,4 +29,5 @@ public interface LendService extends IService<Lend> {
 
     void makeLoan(Long id);
 
+    List<Lend> selectListByUserId(Long userId);
 }

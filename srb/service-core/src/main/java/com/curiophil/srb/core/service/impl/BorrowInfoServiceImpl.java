@@ -109,7 +109,7 @@ public class BorrowInfoServiceImpl extends ServiceImpl<BorrowInfoMapper, BorrowI
     @Override
     public Integer getStatusByUserId(Long userId) {
         QueryWrapper<BorrowInfo> borrowInfoQueryWrapper = new QueryWrapper<>();
-        borrowInfoQueryWrapper.select("status").eq("user_id", userId);
+        borrowInfoQueryWrapper.select("status").eq("user_id", userId).orderByDesc("create_time");
         List<Object> objects = baseMapper.selectObjs(borrowInfoQueryWrapper);
 
         if(objects.size() == 0){
